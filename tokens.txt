@@ -1,0 +1,16 @@
+type_int->1
+reserved_main->1
+parenthesis_(->1
+parenthesis_)->1
+brackets_{->1
+type_float->2
+attrib_=->2
+expression_;->2
+type_int->3
+attrib_=->3
+expression_;->3
+type_double->4
+reserved_return->5
+expression_;->5
+brackets_}->6
+$

@@ -1,0 +1,4 @@
+Erro sintatico - Esperado símbolo '=' após a declaração de variáveis - linha: 5
+Token problemático: reserved_return->5
+
+Verifique os erros sintaticos e tente compilar novamente

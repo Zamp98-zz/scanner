@@ -15,6 +15,7 @@ expression = [';']
 tokens = {
     'relop' : relop,
     'addop' : addop,
+    'type':type,
     'reserved' : reserved,
     'comment':comment,
     'mulop':mulop,
@@ -22,7 +23,6 @@ tokens = {
     'brackets':brackets,
     'memoryAddress':memoryAddress,
     'attrib':attrib,
-    'type':type,
     'expression':expression
 }
 
@@ -37,6 +37,7 @@ def cleanData(data):
 
 def getTokens(filename):
     try:
+        linha = 1
         file = open(filename, 'r')
         data = file.readlines()
         cd = cleanData(data)
@@ -44,10 +45,12 @@ def getTokens(filename):
         for a in cd:
             for key in tokens:
                 for k in tokens[key]:
+                    print(a[0])
                     if a[0].find(k) != -1:
                         print("key",k,"found on", a)
-                        t.append({key: k})
-        print(t)
-
+                        t.append(key+'_'+k+'->'+str(linha)+'\n')
+            linha += 1
+        
+        return t
     except:
         print("Erro")
